@@ -63,6 +63,8 @@ lxml should be the fastest method
 
 '''
 
+l.basicConfig(level=l.DEBUG, format="%(message)s")
+
 try:
     from lxml import etree
     l.debug("running with lxml.etree")
@@ -87,7 +89,6 @@ except ImportError:
 
 
 # Initialize
-l.basicConfig(level=l.DEBUG, format="%(message)s")
 LINESTRING_POINTS = {}
 
 
