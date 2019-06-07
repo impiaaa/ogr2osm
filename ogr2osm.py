@@ -503,6 +503,8 @@ def output():
         for node in nodes:
             xmlattrs = {'visible':'true','id':str(node.id), 'lat':str(node.y*10**-OPTIONS.significantDigits), 'lon':str(node.x*10**-OPTIONS.significantDigits)}
             xmlattrs.update(attributes)
+            if node in featuresmap and featuresmap[node].timestamp:
+                xmlattrs['timestamp'] = featuresmap[node].timestamp.strftime('%Y-%m-%dT%H:%M:%SZ')
 
             xmlobject = etree.Element('node', xmlattrs)
 

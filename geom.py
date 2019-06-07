@@ -59,6 +59,7 @@ class Feature(object):
         self.geometry = None
         self.tags = {}
         Feature.features.append(self)
+        self.timestamp = None
     def replacejwithi(self, i, j):
         if self.geometry == j:
             self.geometry = i
